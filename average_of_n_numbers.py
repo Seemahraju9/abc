@@ -1,9 +1,15 @@
 def average(*args: int)->float:
+    #this validation must be added to avoid zero division error.
+    if len(args) == 0:
+        raise BaseException
+        
     average = 0.0;
     for i in range(len(args)):
         average += args[i]
 
     average = average/len(args)
+    '''Instead of summing using for loop we can use sum function
+    average = sum(args)/len(args) '''
     return average
 
 print('''    ___     _______ ____      _    ____ ___ _   _  ____ 
